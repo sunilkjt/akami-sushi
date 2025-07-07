@@ -5,14 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akami Sushi Lisboa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    function switchLang(lang) {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-      });
-    }
     tailwind.config = {
       theme: {
         extend: {
@@ -25,68 +20,119 @@
           }
         }
       }
+    };
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
     }
   </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans text-[18px]">
-  <div class="p-6 max-w-6xl mx-auto">
-    <header class="flex items-center justify-between py-4 border-b border-gray-300">
-      <h1 class="text-5xl font-serif text-akami">Akami Sushi</h1>
+
+<script>
+  function showImage(src) {
+    const overlay = document.createElement("div");
+    overlay.style = "position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.9);display:flex;justify-content:center;align-items:center;z-index:9999;";
+    const img = document.createElement("img");
+    img.src = src;
+    img.style = "max-width:90vw;max-height:90vh;border-radius:1rem;";
+    overlay.onclick = () => document.body.removeChild(overlay);
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+  }
+</script>
+
+<body class="bg-white text-gray-800 font-sans text-[18px] fade-in">
+  <div class="p-6 max-w-7xl mx-auto">
+    <header class="flex items-center justify-between py-6 border-b border-gray-300">
+      <div class="flex items-center gap-4"><img src="logo.png" alt="Logo" class="h-16 w-16 object-contain"><h1 class="text-6xl font-serif text-akami">Akami Sushi</h1></div>
       <div>
-        <button onclick="switchLang('en')" class="px-2 text-xl">🇬🇧</button>
-        <button onclick="switchLang('pt')" class="px-2 text-xl">🇵🇹</button>
-        <button onclick="switchLang('jp')" class="px-2 text-xl">🇯🇵</button>
+        <button onclick="switchLang('en')" class="px-2 text-2xl">🇬🇧</button>
+        <button onclick="switchLang('pt')" class="px-2 text-2xl">🇵🇹</button>
+        <button onclick="switchLang('jp')" class="px-2 text-2xl">🇯🇵</button>
       </div>
     </header>
 
-    <section class="my-10">
+    <section class="my-16 text-center">
       <div data-lang="en">
-        <h2 class="text-3xl font-serif mb-3">Welcome to Akami Sushi</h2>
-        <p class="leading-relaxed">Experience authentic Japanese cuisine in the heart of Lisbon with premium ingredients and elegant atmosphere.</p>
+        <h2 class="text-5xl font-serif mb-6">🍣 About Us</h2>
+        <p class="text-xl leading-relaxed max-w-3xl mx-auto fade-in">
+          Welcome to <strong>Akami Sushi</strong>, where modern Japanese flavors meet Lisbon’s heart. We serve fresh, authentic sushi with premium ingredients and warm hospitality.
+        </p>
       </div>
       <div data-lang="pt" style="display:none;">
-        <h2 class="text-3xl font-serif mb-3">Bem-vindo ao Akami Sushi</h2>
-        <p class="leading-relaxed">Desfrute da autêntica cozinha japonesa no coração de Lisboa com ingredientes premium e ambiente elegante.</p>
+        <h2 class="text-5xl font-serif mb-6">🍣 Sobre Nós</h2>
+        <p class="text-xl leading-relaxed max-w-3xl mx-auto fade-in">
+          Bem-vindo ao <strong>Akami Sushi</strong>, onde os sabores japoneses modernos encontram o coração de Lisboa. Servimos sushi autêntico com ingredientes premium e hospitalidade calorosa.
+        </p>
       </div>
       <div data-lang="jp" style="display:none;">
-        <h2 class="text-3xl font-serif mb-3">ようこそ赤味寿司へ</h2>
-        <p class="leading-relaxed">リスボンの中心で本格的な日本料理を、高品質な素材と上品な空間でお楽しみください。</p>
+        <h2 class="text-5xl font-serif mb-6">🍣 店舗紹介</h2>
+        <p class="text-xl leading-relaxed max-w-3xl mx-auto fade-in">
+          <strong>赤味寿司</strong>へようこそ。リスボンの中心で、新鮮で本格的な日本料理をご提供しています。
+        </p>
       </div>
     </section>
 
     <section class="my-10 text-center">
-      <h2 class="text-2xl font-serif mb-4">Order Online</h2>
-      <a href="https://food.bolt.eu/pt-PT/386-lisbon/p/144578-akami-sushi" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">🍱 Order on Bolt Food</a>
-      <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">🍣 Order on Uber Eats</a>
+      <h2 class="text-3xl font-serif mb-4">🍱 Order Online</h2>
+      <a href="https://food.bolt.eu/pt-PT/386-lisbon/p/144578-akami-sushi" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">Order on Bolt Food</a>
+      <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">Order on Uber Eats</a>
     </section>
 
-    <section class="my-10">
-      <h2 class="text-2xl font-serif mb-4">Contact</h2>
+    <section class="my-12">
+      <h2 class="text-3xl font-serif mb-6 text-center">🍣 Gallery</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<img src="images/WhatsApp Image 2025-04-25 at 03.41.25_0249ca50.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_88649eaf.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_965306ec.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_b43c9f59.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_3881a224.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_0a235a1e.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.27_485e5f2a.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_529fa17f.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.29_88c6e5e6.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.29_6daa514b.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.27_4ed83f85.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.27_0e2b68b3.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.29_7079c717.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.29_ca1c567c.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_f3a285f7.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_f13c37ef.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.29_2fb1d20c.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_c1fff619.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_bcf011e7.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+<img src="images/WhatsApp Image 2025-07-07 at 15.48.28_cb4f4567.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" onclick="showImage(this.src)">
+
+      </div>
+    </section>
+
+    <section class="my-12">
+      <h2 class="text-3xl font-serif mb-6 text-center">📷 Instagram Feed</h2>
+      <iframe src="https://snapwidget.com/embed/1059312" class="w-full h-[500px]" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+      <!-- Replace above iframe with your Instagram plugin if needed -->
+    </section>
+
+    <footer class="mt-16 border-t pt-6 text-center text-lg">
+      <h2 class="text-2xl font-serif mb-2">📞 Contact Us</h2>
       <p><strong>Phone:</strong> 217160316</p>
       <p><strong>WhatsApp:</strong> +351 920 309 613</p>
+      <p><strong>Address:</strong> R. Conselheiro José Silvestre Ribeiro 8A, Lisbon</p>
       <p><strong>Hours:</strong> 11:30–15:30 and 18:30–22:30</p>
-    </section>
-
-    <section class="my-10">
-      <h2 class="text-2xl font-serif mb-4">Google Map</h2>
-      <iframe src="https://maps.google.com/maps?q=R.%20Conselheiro%20Jos%C3%A9%20Silvestre%20Ribeiro%208A&t=&z=17&ie=UTF8&iwloc=&output=embed" class="w-full h-80 rounded-xl shadow-lg"></iframe>
-    </section>
-
-    
-<section class="my-12">
-  <h2 class="text-3xl font-serif mb-6 text-center">🍣 Gallery</h2>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <img src="images/WhatsApp Image 2025-04-25 at 03.41.25_0249ca50.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_88649eaf.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_965306ec.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_b43c9f59.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_3881a224.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_0a235a1e.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.27_485e5f2a.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_529fa17f.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.29_88c6e5e6.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.29_6daa514b.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.27_4ed83f85.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.27_0e2b68b3.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.29_7079c717.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.29_ca1c567c.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_f3a285f7.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_f13c37ef.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.29_2fb1d20c.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_c1fff619.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_bcf011e7.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105"><img src="images/WhatsApp Image 2025-07-07 at 15.48.28_cb4f4567.jpg" alt="Dish" class="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-105">
-  </div>
-</section>
-
-<section class="my-12">
-  <h2 class="text-3xl font-serif mb-6 text-center">📷 Instagram Feed</h2>
-  <iframe src="https://snapwidget.com/embed/1059312" class="w-full h-[500px]" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-</section>
-
-      <iframe src="https://snapwidget.com/embed/1059312" class="w-full h-[500px]" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-    </section>
+      <p class="text-gray-500 mt-4">&copy; 2025 Akami Sushi Lisboa</p>
+    </footer>
   </div>
 </body>
 </html>
