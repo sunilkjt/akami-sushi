@@ -1,1 +1,66 @@
-<!-- Multilingual site will be rebuilt here -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akami Sushi Lisboa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="p-6 max-w-6xl mx-auto">
+    <header class="flex items-center justify-between">
+      <h1 class="text-4xl font-bold">Akami Sushi</h1>
+      <div>
+        <button onclick="switchLang('en')" class="px-2">🇬🇧</button>
+        <button onclick="switchLang('pt')" class="px-2">🇵🇹</button>
+        <button onclick="switchLang('jp')" class="px-2">🇯🇵</button>
+      </div>
+    </header>
+
+    <section class="my-6">
+      <div data-lang="en">
+        <h2 class="text-2xl font-semibold mb-2">Welcome to Akami Sushi</h2>
+        <p>Experience authentic Japanese cuisine in the heart of Lisbon.</p>
+      </div>
+      <div data-lang="pt" style="display:none;">
+        <h2 class="text-2xl font-semibold mb-2">Bem-vindo ao Akami Sushi</h2>
+        <p>Desfrute da autêntica cozinha japonesa no coração de Lisboa.</p>
+      </div>
+      <div data-lang="jp" style="display:none;">
+        <h2 class="text-2xl font-semibold mb-2">ようこそ赤味寿司へ</h2>
+        <p>リスボンの中心で本格的な日本料理を体験してください。</p>
+      </div>
+    </section>
+
+    <section class="my-6">
+      <h2 class="text-xl font-bold mb-4">Contact</h2>
+      <p><strong>Phone:</strong> 217160316</p>
+      <p><strong>WhatsApp:</strong> +351 920 309 613</p>
+      <p><strong>Hours:</strong> 11:30–15:30 and 18:30–22:30</p>
+    </section>
+
+    <section class="my-6">
+      <h2 class="text-xl font-bold mb-4">Google Map</h2>
+      <iframe src="https://maps.google.com/maps?q=R.%20Conselheiro%20Jos%C3%A9%20Silvestre%20Ribeiro%208A&t=&z=17&ie=UTF8&iwloc=&output=embed" class="w-full h-72"></iframe>
+    </section>
+
+    <section class="my-6">
+      <h2 class="text-xl font-bold mb-4">Uber Eats Menu</h2>
+      <p>Order online at <a class="text-blue-600 underline" href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank">Uber Eats</a></p>
+    </section>
+
+    <section class="my-6">
+      <h2 class="text-xl font-bold mb-4">Instagram</h2>
+      <iframe src="https://snapwidget.com/embed/1059312" class="w-full h-[500px]" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+    </section>
+  </div>
+</body>
+</html>
