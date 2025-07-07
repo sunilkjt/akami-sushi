@@ -19,6 +19,9 @@
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            akami: '#B91C1C'
           }
         }
       }
@@ -28,7 +31,7 @@
 <body class="bg-white text-gray-800 font-sans text-[18px]">
   <div class="p-6 max-w-6xl mx-auto">
     <header class="flex items-center justify-between py-4 border-b border-gray-300">
-      <h1 class="text-5xl font-serif">Akami Sushi</h1>
+      <h1 class="text-5xl font-serif text-akami">Akami Sushi</h1>
       <div>
         <button onclick="switchLang('en')" class="px-2 text-xl">🇬🇧</button>
         <button onclick="switchLang('pt')" class="px-2 text-xl">🇵🇹</button>
@@ -51,6 +54,12 @@
       </div>
     </section>
 
+    <section class="my-10 text-center">
+      <h2 class="text-2xl font-serif mb-4">Order Online</h2>
+      <a href="https://food.bolt.eu/pt-PT/386-lisbon/p/144578-akami-sushi" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">🍱 Order on Bolt Food</a>
+      <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">🍣 Order on Uber Eats</a>
+    </section>
+
     <section class="my-10">
       <h2 class="text-2xl font-serif mb-4">Contact</h2>
       <p><strong>Phone:</strong> 217160316</p>
@@ -61,11 +70,6 @@
     <section class="my-10">
       <h2 class="text-2xl font-serif mb-4">Google Map</h2>
       <iframe src="https://maps.google.com/maps?q=R.%20Conselheiro%20Jos%C3%A9%20Silvestre%20Ribeiro%208A&t=&z=17&ie=UTF8&iwloc=&output=embed" class="w-full h-80 rounded-xl shadow-lg"></iframe>
-    </section>
-
-    <section class="my-10">
-      <h2 class="text-2xl font-serif mb-4">Uber Eats Menu</h2>
-      <p class="mb-3">Order online at <a class="text-blue-600 underline" href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank">Uber Eats</a></p>
     </section>
 
     <section class="my-10">
