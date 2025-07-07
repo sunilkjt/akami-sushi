@@ -5,88 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akami Sushi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 transition-colors duration-300">
-  <header class="bg-red-600 text-white">
-    <div class="container mx-auto p-6 flex flex-col items-center justify-center text-center">
-      <img src="logo.png" alt="Akami Sushi Logo" class="w-28 mb-4">
-      <h1 class="text-4xl font-bold">Akami Sushi</h1>
-      <p class="text-lg mt-2">Authentic Japanese Cuisine in Lisbon</p>
-      <nav class="mt-4 space-x-4">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#menu" class="hover:underline">Menu</a>
-        <a href="#gallery" class="hover:underline">Gallery</a>
-        <a href="#map" class="hover:underline">Location</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-        <button id="theme-toggle" class="ml-4 px-2 py-1 bg-white text-red-600 rounded">Toggle Theme</button>
+<body class="bg-white text-gray-900">
+  <header class="bg-white border-b shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <img src="logo.png" alt="Akami Sushi Logo" class="w-20">
+      <nav class="space-x-4 text-sm md:text-base font-medium">
+        <a href="#about" class="hover:text-red-600">About</a>
+        <a href="#menu" class="hover:text-red-600">Menu</a>
+        <a href="#gallery" class="hover:text-red-600">Gallery</a>
+        <a href="#map" class="hover:text-red-600">Location</a>
+        <a href="#contact" class="hover:text-red-600">Contact</a>
+        <a href="https://wa.me/351912345678" class="bg-green-500 text-white px-3 py-1 rounded">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <section id="about" class="container mx-auto py-12 px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">About Us</h2>
-    <p class="text-lg max-w-3xl">At Akami Sushi, we bring the heart of Japan to Lisbon. Our chefs use premium ingredients and traditional techniques to serve unforgettable sushi and Japanese dishes.</p>
+  <section id="hero" class="text-center py-20 bg-gray-100">
+    <h1 class="text-5xl font-semibold">Akami Sushi</h1>
+    <p class="mt-4 text-lg text-gray-700">Tradition and taste, served fresh daily in Lisbon.</p>
   </section>
 
-  <section id="menu" class="bg-gray-100 py-12 px-6" data-aos="fade-up">
+  <section id="about" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-semibold mb-6">About Us</h2>
+    <p class="max-w-2xl text-lg">We offer an elegant and modern approach to traditional Japanese cuisine. Our chefs take pride in using the freshest fish and finest ingredients to create sushi and dishes that balance simplicity and taste.</p>
+  </section>
+
+  <section id="menu" class="bg-gray-50 py-16 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Menu Highlights</h2>
-      <div class="text-center mb-6">
-        <a href="https://drive.google.com/drive/folders/1RfgCMAJblpaGqEshwMOj-VEMYh7O-DHB" target="_blank" class="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">📄 View Full Menu (PDF)</a>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white shadow rounded p-4">
-          <img src="salmon poke.jpg" alt="Salmon Poke" class="rounded mb-4">
-          <h3 class="text-xl font-semibold">Salmon Poke Bowl</h3>
-          <p>Fresh salmon, mango, avocado, rice, sesame & spicy mayo – €11.00</p>
+      <h2 class="text-3xl font-semibold text-center mb-10">Uber Eats Menu</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white shadow p-5 rounded">
+          <h3 class="text-xl font-semibold mb-2">Gyozas (4 pcs)</h3>
+          <p class="text-sm text-gray-600 mb-2">Grilled dumplings filled with vegetables and chicken.</p>
+          <span class="text-red-600 font-bold">€3.95</span>
         </div>
-        <div class="bg-white shadow rounded p-4">
-          <img src="combo.png" alt="Sushi Combo" class="rounded mb-4">
-          <h3 class="text-xl font-semibold">Sushi Combo</h3>
-          <p>Deluxe mixed sushi & sashimi platter – €24.50</p>
+        <div class="bg-white shadow p-5 rounded">
+          <h3 class="text-xl font-semibold mb-2">Salmon Poke</h3>
+          <p class="text-sm text-gray-600 mb-2">Fresh poke bowl with salmon, avocado, mango & sesame.</p>
+          <span class="text-red-600 font-bold">€11.00</span>
         </div>
-        <div class="bg-white shadow rounded p-4">
-          <img src="aiexpandnew.png" alt="Yakisoba" class="rounded mb-4">
-          <h3 class="text-xl font-semibold">Yakisoba Noodles</h3>
-          <p>Stir-fried noodles with vegetables and seafood – €10.00</p>
+        <div class="bg-white shadow p-5 rounded">
+          <h3 class="text-xl font-semibold mb-2">Hot Roll (8 pcs)</h3>
+          <p class="text-sm text-gray-600 mb-2">Crispy fried roll with salmon and spicy mayo.</p>
+          <span class="text-red-600 font-bold">€11.95</span>
+        </div>
+        <div class="bg-white shadow p-5 rounded">
+          <h3 class="text-xl font-semibold mb-2">Temaki Salmão</h3>
+          <p class="text-sm text-gray-600 mb-2">Cone-shaped roll with salmon, rice & sesame.</p>
+          <span class="text-red-600 font-bold">€6.00</span>
+        </div>
+        <div class="bg-white shadow p-5 rounded">
+          <h3 class="text-xl font-semibold mb-2">Sashimi Salmão (9 pcs)</h3>
+          <p class="text-sm text-gray-600 mb-2">Sliced salmon served fresh with ginger and soy.</p>
+          <span class="text-red-600 font-bold">€10.95</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="gallery" class="container mx-auto py-12 px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
+  <section id="gallery" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-semibold text-center mb-10">Gallery</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="starter33.png" alt="Sushi Rolls" class="rounded shadow">
-      <img src="starter2.jpeg" alt="Tempura 1" class="rounded shadow">
-      <img src="starter3.jpeg" alt="Tempura 2" class="rounded shadow">
-      <img src="sushiroll.png" alt="Special Roll" class="rounded shadow">
-      <img src="8piece.jpg" alt="8 Piece Set" class="rounded shadow">
+      <img src="starter33.png" alt="Dish" class="rounded shadow">
+      <img src="starter2.jpeg" alt="Dish" class="rounded shadow">
+      <img src="starter3.jpeg" alt="Dish" class="rounded shadow">
+      <img src="sushiroll.png" alt="Roll" class="rounded shadow">
+      <img src="8piece.jpg" alt="Set" class="rounded shadow">
     </div>
   </section>
 
-  <section id="map" class="py-12 px-6 bg-gray-100" data-aos="fade-up">
+  <section id="map" class="bg-gray-100 py-12 px-4">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Find Us</h2>
-      <iframe src="https://www.google.com/maps?q=R.+Conselheiro+Jos%C3%A9+Silvestre+Ribeiro+8A,+Lisboa,+Portugal&output=embed" width="100%" height="450" class="rounded border shadow" allowfullscreen="" loading="lazy"></iframe>
+      <h2 class="text-3xl font-semibold mb-4">Find Us</h2>
+      <iframe src="https://www.google.com/maps?q=R.+Conselheiro+Jos%C3%A9+Silvestre+Ribeiro+8A,+Lisboa,+Portugal&output=embed" width="100%" height="400" class="rounded shadow" loading="lazy"></iframe>
     </div>
   </section>
 
-  <section id="instagram" class="container mx-auto py-12 px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4 text-center">Instagram</h2>
-    <div class="text-center">
-      <iframe src="https://snapwidget.com/embed/1054246" class="w-full h-[500px] border-none"></iframe>
-      <p class="mt-2 text-sm">Follow us on <a href="https://instagram.com/akamisushilisboa" class="text-red-600 underline" target="_blank">@akamisushilisboa</a></p>
-    </div>
-  </section>
-
-  <section id="contact" class="bg-white py-12 px-6" data-aos="fade-up">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+  <section id="contact" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Contact</h2>
+    <div class="text-center space-y-2">
       <p>📍 Rua Conselheiro José Silvestre Ribeiro 8A, Lisbon</p>
       <p>📞 +351 912 345 678</p>
       <p>📧 contact@akamisushi.pt</p>
@@ -94,12 +103,8 @@
     </div>
   </section>
 
-  <footer class="bg-red-600 text-white text-center py-4">
-    &copy; 2025 Akami Sushi. All rights reserved.
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Akami Sushi. All rights reserved.</p>
   </footer>
-
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
