@@ -41,6 +41,24 @@
       to { opacity: 1; }
     }
   </style>
+
+  <style>
+@keyframes fadeSlider {
+  0%, 100% {opacity: 0;}
+  10%, 30% {opacity: 1;}
+}
+.animate-fade-slider {
+  animation: fadeSlider 12s infinite;
+  position: absolute;
+}
+.animate-fade-slider.delay-1 {
+  animation-delay: 4s;
+}
+.animate-fade-slider.delay-2 {
+  animation-delay: 8s;
+}
+</style>
+
 </head>
 
 <script>
@@ -66,6 +84,23 @@
         <button onclick="switchLang('jp')" class="px-2 text-2xl">🇯🇵</button>
       </div>
     </header>
+<section class="relative w-full h-[80vh] overflow-hidden">
+  <div class="absolute inset-0 animate-fade-slider">
+    <img src="images/hero1.jpg" class="object-cover w-full h-full" alt="Sushi Slide 1">
+  </div>
+  <div class="absolute inset-0 animate-fade-slider delay-1">
+    <img src="images/hero2.jpg" class="object-cover w-full h-full" alt="Sushi Slide 2">
+  </div>
+  <div class="absolute inset-0 animate-fade-slider delay-2">
+    <img src="images/hero3.jpg" class="object-cover w-full h-full" alt="Sushi Slide 3">
+  </div>
+  <div class="absolute inset-0 flex items-center justify-center text-white text-center px-4">
+    <div>
+      <h1 class="text-5xl font-[Playfair Display] drop-shadow-lg">Akami Sushi</h1>
+      <p class="text-xl font-[Inter] mt-2 drop-shadow">Refined Japanese Cuisine in the Heart of Lisbon</p>
+    </div>
+  </div>
+</section>
 
     <section class="my-16 text-center">
       <div data-lang="en">
