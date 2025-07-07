@@ -6,70 +6,68 @@
   <title>Akami Sushi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .gallery img:hover { transform: scale(1.03); transition: transform 0.3s; }
   </style>
 </head>
 <body class="bg-white text-gray-900">
-  <header class="bg-white border-b shadow-sm sticky top-0 z-50">
+  <header class="bg-white border-b shadow sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <img src="logo.png" alt="Akami Sushi Logo" class="w-20">
       <nav class="space-x-4 text-sm md:text-base font-medium">
         <a href="#about" class="hover:text-red-600">About</a>
         <a href="#menu" class="hover:text-red-600">Menu</a>
         <a href="#gallery" class="hover:text-red-600">Gallery</a>
-        <a href="#map" class="hover:text-red-600">Location</a>
         <a href="#contact" class="hover:text-red-600">Contact</a>
         <a href="https://wa.me/351912345678" class="bg-green-500 text-white px-3 py-1 rounded">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <section id="hero" class="text-center py-20 bg-gray-100">
+  <section class="text-center py-16 bg-gray-100">
     <h1 class="text-5xl font-semibold">Akami Sushi</h1>
-    <p class="mt-4 text-lg text-gray-700">Tradition and taste, served fresh daily in Lisbon.</p>
+    <p class="mt-4 text-lg text-gray-700">Where tradition meets artistry – in the heart of Lisbon.</p>
   </section>
 
   <section id="about" class="container mx-auto px-4 py-16">
     <h2 class="text-3xl font-semibold mb-6">About Us</h2>
-    <p class="max-w-2xl text-lg">We offer an elegant and modern approach to traditional Japanese cuisine. Our chefs take pride in using the freshest fish and finest ingredients to create sushi and dishes that balance simplicity and taste.</p>
+    <p class="max-w-2xl text-lg">Akami Sushi blends traditional Japanese cuisine with a modern dining experience. Our chefs use only premium ingredients to deliver sushi and dishes that are visually stunning and delicious.</p>
   </section>
 
   <section id="menu" class="bg-gray-50 py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-3xl font-semibold text-center mb-10">Uber Eats Menu</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white shadow p-5 rounded">
-          <h3 class="text-xl font-semibold mb-2">Gyozas (4 pcs)</h3>
-          <p class="text-sm text-gray-600 mb-2">Grilled dumplings filled with vegetables and chicken.</p>
-          <span class="text-red-600 font-bold">€3.95</span>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-bold text-red-600 mb-2">Starters</h3>
+          <ul class="space-y-1">
+            <li>Gyozas (4 pcs) – €3.95</li>
+            <li>Edamame – €3.50</li>
+            <li>Miso Soup – €2.95</li>
+          </ul>
         </div>
-        <div class="bg-white shadow p-5 rounded">
-          <h3 class="text-xl font-semibold mb-2">Salmon Poke</h3>
-          <p class="text-sm text-gray-600 mb-2">Fresh poke bowl with salmon, avocado, mango & sesame.</p>
-          <span class="text-red-600 font-bold">€11.00</span>
+        <div>
+          <h3 class="text-xl font-bold text-red-600 mb-2">Sushi & Rolls</h3>
+          <ul class="space-y-1">
+            <li>Salmon Poke – €11.00</li>
+            <li>Hot Roll (8 pcs) – €11.95</li>
+            <li>Temaki Salmão – €6.00</li>
+            <li>Sashimi Salmão (9 pcs) – €10.95</li>
+            <li>California Roll – €8.50</li>
+          </ul>
         </div>
-        <div class="bg-white shadow p-5 rounded">
-          <h3 class="text-xl font-semibold mb-2">Hot Roll (8 pcs)</h3>
-          <p class="text-sm text-gray-600 mb-2">Crispy fried roll with salmon and spicy mayo.</p>
-          <span class="text-red-600 font-bold">€11.95</span>
+        <div>
+          <h3 class="text-xl font-bold text-red-600 mb-2">Combinations</h3>
+          <ul class="space-y-1">
+            <li>Mix 12 pcs – €13.90</li>
+            <li>Akami Box (18 pcs) – €17.90</li>
+            <li>Sashimi Mix (12 pcs) – €14.50</li>
+          </ul>
         </div>
-        <div class="bg-white shadow p-5 rounded">
-          <h3 class="text-xl font-semibold mb-2">Temaki Salmão</h3>
-          <p class="text-sm text-gray-600 mb-2">Cone-shaped roll with salmon, rice & sesame.</p>
-          <span class="text-red-600 font-bold">€6.00</span>
-        </div>
-        <div class="bg-white shadow p-5 rounded">
-          <h3 class="text-xl font-semibold mb-2">Sashimi Salmão (9 pcs)</h3>
-          <p class="text-sm text-gray-600 mb-2">Sliced salmon served fresh with ginger and soy.</p>
-          <span class="text-red-600 font-bold">€10.95</span>
+        <div class="mt-6 text-center">
+          <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">Order on Uber Eats</a>
         </div>
       </div>
     </div>
@@ -77,19 +75,22 @@
 
   <section id="gallery" class="container mx-auto px-4 py-16">
     <h2 class="text-3xl font-semibold text-center mb-10">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gallery">
       <img src="starter33.png" alt="Dish" class="rounded shadow">
       <img src="starter2.jpeg" alt="Dish" class="rounded shadow">
       <img src="starter3.jpeg" alt="Dish" class="rounded shadow">
       <img src="sushiroll.png" alt="Roll" class="rounded shadow">
       <img src="8piece.jpg" alt="Set" class="rounded shadow">
+      <img src="combo.png" alt="Combo" class="rounded shadow">
+      <img src="aiexpandnew.png" alt="Noodles" class="rounded shadow">
     </div>
   </section>
 
-  <section id="map" class="bg-gray-100 py-12 px-4">
+  <section id="instagram" class="bg-gray-100 py-12 px-4">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-4">Find Us</h2>
-      <iframe src="https://www.google.com/maps?q=R.+Conselheiro+Jos%C3%A9+Silvestre+Ribeiro+8A,+Lisboa,+Portugal&output=embed" width="100%" height="400" class="rounded shadow" loading="lazy"></iframe>
+      <h2 class="text-3xl font-semibold mb-4">Instagram</h2>
+      <p class="mb-4">Follow our latest updates and dishes on <a href="https://instagram.com/akamisushilisboa" class="text-red-600 font-semibold">@akamisushilisboa</a></p>
+      <iframe src="https://www.instagram.com/akamisushilisboa/embed" class="w-full h-96 border rounded" loading="lazy"></iframe>
     </div>
   </section>
 
