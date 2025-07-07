@@ -134,7 +134,40 @@
       <p><strong>Address:</strong> R. Conselheiro José Silvestre Ribeiro 8A, Lisbon</p>
       <p><strong>Hours:</strong> 11:30–15:30 and 18:30–22:30</p>
       <p class="text-gray-500 mt-4">&copy; 2025 Akami Sushi Lisboa</p>
+      <a href="https://wa.me/351920309613" target="_blank" id="whatsapp-chat" title="Chat with us on WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/kriskorn/whatsapp-chat-icon/whatsapp.svg" alt="WhatsApp Chat" />
+</a>
+
+      <style>
+        #whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+#whatsapp-chat:hover {
+    transform: scale(1.1);
+}
+#whatsapp-chat img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+    </style>
     </footer>
   </div>
+  <script>
+$(document).ready(function(){
+  $("#whatsapp-chat").fadeIn(1000);
+});
+</script>
 </body>
 </html>
