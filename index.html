@@ -11,6 +11,54 @@
 
   gtag('config', 'G-5DV3P3TTMH');
 </script>
+  <script>
+  function showImage(src) {
+    const overlay = document.createElement("div");
+    overlay.style = `
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    `;
+
+    // Image Element
+    const img = document.createElement("img");
+    img.src = src;
+    img.style = `
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    `;
+
+    // Close Button
+    const closeBtn = document.createElement("button");
+    closeBtn.innerHTML = "&times;";
+    closeBtn.style = `
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 3rem;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 10000;
+    `;
+    closeBtn.onclick = () => document.body.removeChild(overlay);
+
+    // Add everything to overlay
+    overlay.appendChild(img);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+  }
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akami Sushi Lisboa</title>
