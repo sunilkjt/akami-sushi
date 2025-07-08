@@ -80,6 +80,29 @@
 
     
 </style>
+<style>
+  .logo-glow {
+    animation: glow 2s ease-in-out infinite alternate, bounce 2s infinite;
+  }
+
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 5px #f43f5e);
+    }
+    to {
+      filter: drop-shadow(0 0 20px #f43f5e);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>
 
 </head>
 
@@ -113,7 +136,7 @@
   <!-- Centered Logo, Title & Language -->
   <div class="relative z-20 flex flex-col items-center justify-center text-center h-full text-white px-4">
     <!-- Logo and Title -->
-   <img src="logo.png" alt="Akami Sushi Logo" class="w-28 md:w-40 lg:w-52 object-contain mb-4 drop-shadow-xl animate-bounce hover:scale-110 transition-transform duration-500">
+  <img src="logo.png" alt="Akami Sushi Logo" class="w-28 md:w-40 lg:w-52 object-contain mb-4 logo-glow hover:scale-110 transition-transform duration-500">
 
     <h1 class="text-4xl md:text-6xl font-serif tracking-wide mb-2">Akami Sushi</h1>
 
