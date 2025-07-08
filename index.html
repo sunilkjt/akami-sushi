@@ -89,40 +89,9 @@
 
 <body class="bg-white text-gray-800 font-sans text-[18px] fade-in">
 
-  <div class="sushi-animation-container pointer-events-none">
-  <img src="images/sushiroll.png" class="sushi sushi1" alt="Sushi">
- 
-  <img src="images/sushiroll.png" class="sushi sushi5" alt="Sushi">
-</div>
+  
 
-  <style>
-.sushi-animation-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.sushi {
-  position: absolute;
-  width: 60px;
-  opacity: 0.7;
-  animation: float 12s infinite ease-in-out;
-}
-
-.sushi1 { top: 10%; left: 5%; animation-delay: 0s; }
-
-.sushi5 { top: 85%; left: 30%; animation-delay: 8s; }
-
-@keyframes float {
-  0%   { transform: translateY(0) rotate(0deg); }
-  50%  { transform: translateY(-40px) rotate(10deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-</style>
+  
 
   <div class="p-6 max-w-7xl mx-auto">
   <header class="py-8 border-b border-gray-300 bg-white dark:bg-neutral-900">
@@ -179,11 +148,31 @@
       </div>
     </section>
 
-    <section class="my-10 text-center">
-      <h2 class="text-5xl font-serif mb-4">🍱 Order Online</h2>
-      <a href="https://food.bolt.eu/pt-PT/386-lisbon/p/144578-akami-sushi" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">Order on Bolt Food</a>
-      <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">Order on Uber Eats</a>
-    </section>
+  <section class="my-10 text-center">
+  <h2 class="text-5xl font-serif mb-4">🍱 Order Online</h2>
+
+  <!-- Bolt Food: green background -->
+  <a href="https://food.bolt.eu/pt-PT/386-lisbon/p/144578-akami-sushi"
+     target="_blank"
+     class="bg-[#32bb78] hover:bg-[#28a36a] text-white font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">
+     Order on Bolt Food
+  </a>
+
+  <!-- Uber Eats: black background, green text -->
+  <a href="https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA"
+     target="_blank"
+     class="bg-black hover:bg-gray-900 text-[#06c167] font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">
+     Order on Uber Eats
+  </a>
+
+  <!-- Glovo: yellow background -->
+  <a href="https://glovoapp.com/pt/pt/lisboa/akami-sushi-poke-lis/"
+     target="_blank"
+     class="bg-[#fcd300] hover:bg-[#f1c40f] text-black font-bold py-3 px-6 rounded-full m-2 inline-block transition-all duration-300">
+     Order on Glovo
+  </a>
+</section>
+
 
    <section class="my-12">
   <h2 class="text-5xl font-serif mb-6 text-center">🍣 Gallery</h2>
