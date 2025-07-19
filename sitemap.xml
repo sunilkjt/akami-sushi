@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://akamisushi.pt/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.instagram.com/akamisushi.pt/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.facebook.com/akamisushi.pt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://glovoapp.com/pt/pt/lisboa/akami-sushi-lis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://bolt.eu/pt-pt/food/restaurants/106701/akami-sushi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ubereats.com/pt-en/store/akami-sushi/D6UAYSRHQaOGAFFG3-90eA</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
