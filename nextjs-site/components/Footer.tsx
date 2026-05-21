@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon:'fab fa-instagram', href:'https://www.instagram.com/akami.sushi.lisboa/' },
-                { icon:'fab fa-facebook',  href:'https://www.facebook.com/akamisushilisboa' },
+                { icon:'fab fa-facebook',  href:'https://www.facebook.com/Akamisushipt' },
                 { icon:'fab fa-whatsapp',  href:'https://wa.me/351920309613' },
               ].map(({ icon, href }) => (
                 <a key={icon} href={href} target="_blank" rel="noopener noreferrer"
