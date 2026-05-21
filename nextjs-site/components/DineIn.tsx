@@ -1,81 +1,57 @@
-const items = [
-  { icon: 'fa-sun',          label: 'Perfect for Lunch',          desc: 'Light, fresh sushi during your midday break.' },
-  { icon: 'fa-moon',         label: 'Delightful Dinner',          desc: 'A cosy evening with friends or family.' },
-  { icon: 'fa-bag-shopping', label: 'Convenient Takeaway',        desc: 'Restaurant-quality sushi at home.' },
-  { icon: 'fa-users',        label: 'For Everyone',               desc: 'A menu that suits all ages and tastes.' },
+const offerings = [
+  { img:'/images/sushi1.jpg',         tag:'Sushi',       title:'Handcrafted Rolls',    desc:'From classic nigiri to bold signature maki.' },
+  { img:'/images/hotdish1.jpg',       tag:'Hot Dishes',  title:'Warm & Comforting',    desc:'Rich ramen, teriyaki and wok-fired dishes.' },
+  { img:'/images/complimentary1.jpeg',tag:'Starters',    title:'Complimentary Bites',  desc:'Delicate starters to open your appetite.' },
 ]
 
 export default function DineIn() {
   return (
-    <section id="dine-in" className="bg-dark-bg py-24 px-6">
+    <section id="dine-in" className="bg-ink py-28 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="section-divider">
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">
-            Experience
-          </span>
+
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="gold-line justify-start mb-4">
+              <span className="text-gold text-[10px] tracking-[.35em] uppercase">Experience</span>
+            </div>
+            <h2 className="font-display font-light text-cream leading-none"
+                style={{ fontSize:'clamp(2.8rem,6vw,5.5rem)' }}>
+              Dine With Us
+            </h2>
+          </div>
+          <p className="text-cream/35 text-sm max-w-xs leading-relaxed">
+            Every seat is a front-row view of our kitchen — where precision meets passion.
+          </p>
         </div>
-        <h2 className="text-4xl font-serif text-white text-center mb-4">
-          Dine In Our Restaurant
-        </h2>
-        <p className="text-white/60 text-center max-w-xl mx-auto mb-14 leading-relaxed">
-          Step into an elegant world where every detail is crafted for an unforgettable experience —
-          from the first bite to the last.
-        </p>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Photo grid */}
-          <div className="grid grid-cols-2 gap-3 h-[440px]">
-            <div className="menu-card">
-              <img src="/images/sushi1.jpg" alt="Sushi" className="h-full" />
-              <div className="menu-card-overlay">
-                <span className="text-white text-sm font-medium">Sushi</span>
-              </div>
-            </div>
-            <div className="menu-card">
-              <img src="/images/hotdish1.jpg" alt="Hot dish" className="h-full" />
-              <div className="menu-card-overlay">
-                <span className="text-white text-sm font-medium">Hot Dishes</span>
-              </div>
-            </div>
-            <div className="menu-card">
-              <img src="/images/complimentary1.jpeg" alt="Complimentary" className="h-full" />
-              <div className="menu-card-overlay">
-                <span className="text-white text-sm font-medium">Starters</span>
-              </div>
-            </div>
-            <div className="menu-card">
-              <img src="/images/sushi2.jpg" alt="Sushi variety" className="h-full" />
-              <div className="menu-card-overlay">
-                <span className="text-white text-sm font-medium">Rolls</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature list */}
-          <div className="space-y-5">
-            {items.map(({ icon, label, desc }) => (
-              <div
-                key={label}
-                className="flex items-start gap-4 p-5 rounded-xl bg-dark-surface border border-dark-border hover:border-gold/40 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-full bg-akami/20 border border-akami/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <i className={`fas ${icon} text-gold text-sm`} />
-                </div>
+        {/* 3-col cards */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {offerings.map(({ img, tag, title, desc }, i) => (
+            <div key={title}
+                 className={`img-card rounded-2xl h-[420px] anim-up delay-${i + 1}`}>
+              <img src={img} alt={title} />
+              <span className="img-card-tag">{tag}</span>
+              <div className="img-card-overlay">
                 <div>
-                  <p className="text-white font-semibold mb-1">{label}</p>
-                  <p className="text-white/55 text-sm leading-relaxed">{desc}</p>
+                  <p className="text-cream font-serif text-xl mb-1">{title}</p>
+                  <p className="text-cream/65 text-sm">{desc}</p>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
 
-            <a
-              href="#menu-gallery"
-              className="inline-flex items-center gap-3 mt-2 bg-akami hover:bg-akami-dark text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105"
-            >
-              <i className="fas fa-utensils text-sm" />
-              Explore Our Menu
-            </a>
+        {/* CTA row */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6
+                        border-t border-ink-4 pt-10">
+          <div className="flex items-center gap-4 text-cream/35 text-sm">
+            <i className="fas fa-clock text-gold" />
+            <span>Daily: 11:30 – 15:30 &amp; 18:30 – 22:30</span>
           </div>
+          <a href="#menu-gallery" className="btn-crimson text-sm">
+            <i className="fas fa-utensils text-xs" /> Explore Full Menu
+          </a>
         </div>
       </div>
     </section>

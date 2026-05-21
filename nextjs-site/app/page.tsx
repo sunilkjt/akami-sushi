@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import Features from '@/components/ImageSlider'
+import StatsSection from '@/components/ImageSlider'
 import AboutSection from '@/components/AboutSection'
 import DineIn from '@/components/DineIn'
 import OrderOnline from '@/components/OrderOnline'
@@ -36,22 +36,21 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <Features />
+      <StatsSection />
       <AboutSection />
       <DineIn />
       <GalleryLightbox
         images={menuImages}
         title="Our Menu"
-        subtitle="Menu"
+        eyebrow="Menu"
         id="menu-gallery"
-        dark={false}
+        light={true}
       />
       <GalleryLightbox
         images={galleryImages}
         title="Gallery"
-        subtitle="Moments"
+        eyebrow="Moments"
         id="gallery"
-        dark={true}
       />
       <OrderOnline />
       <CTASection />
