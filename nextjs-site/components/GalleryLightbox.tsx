@@ -21,7 +21,7 @@ export default function GalleryLightbox({ images, title, id }: Props) {
             src={src}
             alt="Dish"
             onClick={() => setActive(src)}
-            className="w-full h-auto rounded-lg shadow-md transition-transform hover:scale-105 cursor-pointer"
+            className="gallery-img w-full h-auto rounded-lg shadow-md cursor-pointer"
           />
         ))}
       </div>
