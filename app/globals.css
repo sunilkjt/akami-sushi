@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+@keyframes fadeSlider {
+  0%, 100% { opacity: 0; }
+  10%, 30% { opacity: 1; }
+}
+
+.slide {
+  animation: fadeSlider 12s infinite;
+  position: absolute;
+}
+
+.slide-delay-1 {
+  animation: fadeSlider 12s 4s infinite;
+  position: absolute;
+}
+
+.slide-delay-2 {
+  animation: fadeSlider 12s 8s infinite;
+  position: absolute;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 5px #f43f5e); }
+  to   { filter: drop-shadow(0 0 20px #f43f5e); }
+}
+
+@keyframes bounce-logo {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.logo-glow {
+  animation: glow 2s ease-in-out infinite alternate,
+             bounce-logo 2s infinite;
+}
+
+@layer components {
+  .section-card {
+    @apply border border-gray-200 rounded-xl p-8 my-8 shadow-sm;
+  }
+}
