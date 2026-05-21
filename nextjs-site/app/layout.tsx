@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Akami Sushi Lisboa',
   description:
-    'Authentic Japanese cuisine in the heart of Lisbon. Fresh sushi, hot dishes, takeaway and more.',
+    'Authentic Japanese cuisine in the heart of Lisbon. Fresh sushi, hot dishes, poke bowls and more.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -26,9 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link href="https://awards.infcdn.net/2024/circle_v2.css" rel="stylesheet" />
       </head>
-      <body
-        className={`${inter.variable} ${playfair.variable} bg-white text-gray-800 font-sans text-[18px] fade-in`}
-      >
+      <body className={`${inter.variable} ${playfair.variable} font-sans fade-in`}>
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-1009915336"

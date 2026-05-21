@@ -1,5 +1,6 @@
+import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import ImageSlider from '@/components/ImageSlider'
+import Features from '@/components/ImageSlider'
 import AboutSection from '@/components/AboutSection'
 import DineIn from '@/components/DineIn'
 import OrderOnline from '@/components/OrderOnline'
@@ -33,18 +34,29 @@ const menuImages = [
 export default function Home() {
   return (
     <>
-      <div className="p-6 max-w-7xl mx-auto">
-        <Hero />
-        <ImageSlider />
-        <AboutSection />
-        <DineIn />
-        <OrderOnline />
-        <GalleryLightbox images={galleryImages} title="🍣 Gallery" />
-        <GalleryLightbox images={menuImages} title="🍣 Our Menu" id="menu-gallery" />
-        <CTASection />
-        <FindUs />
-        <Footer />
-      </div>
+      <Navbar />
+      <Hero />
+      <Features />
+      <AboutSection />
+      <DineIn />
+      <GalleryLightbox
+        images={menuImages}
+        title="Our Menu"
+        subtitle="Menu"
+        id="menu-gallery"
+        dark={false}
+      />
+      <GalleryLightbox
+        images={galleryImages}
+        title="Gallery"
+        subtitle="Moments"
+        id="gallery"
+        dark={true}
+      />
+      <OrderOnline />
+      <CTASection />
+      <FindUs />
+      <Footer />
       <WhatsAppButton />
     </>
   )
