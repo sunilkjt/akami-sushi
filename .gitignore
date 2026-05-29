@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+nextjs-site/node_modules/
+nextjs-site/.next/
+nextjs-site/out/
+nextjs-site/tsconfig.tsbuildinfo
